@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description"
+        content="Ruang Baca — tempat menemukan gagasan, pengetahuan, filsafat, psikologi, dan pendidikan.">
+
+  <title>Ruang Baca — Ruang untuk Berpikir</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="#" class="brand" aria-label="Ruang Baca, halaman utama">
+      <span class="brand-icon">r.</span>
+      <span>ruang<span class="brand-light">baca</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#beranda" class="nav-link active">Beranda</a>
+      <a href="#artikel" class="nav-link">Artikel</a>
+      <a href="#tentang" class="nav-link">Tentang</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-button"
+              aria-label="Ganti tema" title="Ganti tema">
+        ☾
+      </button>
+
+      <button id="savedToggle" class="saved-button">
+        Tersimpan <span id="savedCount">0</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="beranda">
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          RUANG UNTUK BERTUMBUH
+        </div>
+
+        <h1>Berpikir lebih dalam.<br>
+          <span>Memahami lebih luas.</span>
+        </h1>
+
+        <p class="hero-description">
+          Kumpulan tulisan tentang pengetahuan, manusia, dan kehidupan.
+          Baca perlahan, temukan perspektif baru, dan biarkan gagasan
+          mengubah cara pandangmu.
+        </p>
+
+        <a href="#artikel" class="primary-button">
+          Mulai membaca <span>↗</span>
+        </a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="hero-symbol">
+          <span>R</span>
+        </div>
+
+        <div class="floating-note note-top">
+          <span class="note-dot"></span>
+          Ideas & knowledge
+        </div>
+
+        <div class="floating-note note-bottom">
+          <span class="note-number">01</span>
+          Read. Reflect. Grow.
+        </div>
+      </div>
+
+      <div class="hero-footer">
+        <span>EDISI DIGITAL · 2026</span>
+        <span>SEBUAH RUANG UNTUK GAGASAN</span>
+      </div>
+    </section>
+
+
+    <section class="section article-section" id="artikel">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">JELAJAHI PENGETAHUAN</span>
+          <h2>Temukan bacaanmu.</h2>
+          <p class="section-description">
+            Pilih topik yang menarik perhatianmu hari ini.
+          </p>
+        </div>
+
+        <div class="article-total">
+          <span id="articleCount">06</span>
+          <span>ARTIKEL</span>
+        </div>
+      </div>
+
+
+      <div class="toolbar">
+        <div class="categories" id="categories">
+          <button class="category active" data-category="Semua">
+            Semua
+          </button>
+
+          <button class="category" data-category="Filsafat">
+            Filsafat
+          </button>
+
+          <button class="category" data-category="Psikologi">
+            Psikologi
+          </button>
+
+          <button class="category" data-category="Pendidikan">
+            Pendidikan
+          </button>
+
+          <button class="category" data-category="Literasi">
+            Literasi
+          </button>
+        </div>
+
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Cari artikel..."
+            aria-label="Cari artikel"
+          >
+
+          <kbd>/</kbd>
+        </label>
+      </div>
+
+
+      <div class="featured-wrap" id="featuredWrap">
+        <article class="featured-card" id="featuredCard">
+          <div class="featured-art" aria-hidden="true">
+            <div class="featured-art-circle"></div>
+            <span class="featured-art-text">THINK<br>DEEPER.</span>
+            <span class="featured-art-caption">A NOTE ON HUMAN NATURE</span>
+          </div>
+
+          <div class="featured-content">
+            <span class="featured-label">PILIHAN EDITOR</span>
+
+            <span class="article-category">FILSAFAT</span>
+
+            <h3>Mengapa kita perlu belajar berpikir kritis?</h3>
+
+            <p>
+              Mempertanyakan sesuatu bukan berarti menolak segalanya.
+              Justru di situlah proses memahami dunia dimulai.
+            </p>
+
+            <div class="article-meta">
+              <span>6 menit membaca</span>
+              <span>·</span>
+              <span>Esai pengetahuan</span>
+            </div>
+
+            <button class="text-button" id="featuredRead">
+              Baca selengkapnya <span>↗</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+
+      <div class="results-heading">
+        <h3 id="resultsTitle">Artikel terbaru</h3>
+        <span id="resultsSubtitle">Pilihan bacaan untukmu</span>
+      </div>
+
+
+      <div class="article-grid" id="articleGrid">
+        <!-- Artikel dibuat otomatis oleh JavaScript. -->
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-icon">⌕</div>
+        <h3>Belum menemukan artikel.</h3>
+        <p>Coba kata kunci atau kategori yang berbeda.</p>
+        <button id="resetSearch" class="primary-button">
+          Tampilkan semua artikel
+        </button>
+      </div>
+
+    </section>
+
+
+    <section class="quote-section">
+      <span class="section-label">SEBUAH PENGINGAT</span>
+
+      <blockquote>
+        "Pengetahuan dimulai ketika kita menyadari
+        bahwa masih banyak hal yang belum kita pahami."
+      </blockquote>
+
+      <div class="quote-line"></div>
+
+      <p>TERUS BELAJAR. TERUS BERTUMBUH.</p>
+    </section>
+
+
+    <section class="about-section" id="tentang">
+      <div class="about-mark">r.</div>
+
+      <div class="about-content">
+        <span class="section-label">TENTANG RUANG BACA</span>
+
+        <h2>Karena membaca bukan sekadar menambah informasi.</h2>
+
+        <p>
+          Ruang Baca adalah ruang digital untuk menjelajahi gagasan,
+          memahami berbagai perspektif, dan mengembangkan kebiasaan
+          berpikir secara mandiri.
+        </p>
+
+        <p>
+          Kami percaya bahwa bacaan yang baik bukan hanya memberikan
+          jawaban, tetapi juga membantu kita mengajukan pertanyaan
+          yang lebih baik.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <a href="#" class="brand footer-brand">
+      <span class="brand-icon">r.</span>
+      <span>ruang<span class="brand-light">baca</span></span>
+    </a>
+
+    <p>Ruang kecil untuk gagasan besar.</p>
+
+    <span class="copyright">
+      © <span id="currentYear">2026</span> RUANG BACA
+    </span>
+  </footer>
+
+
+  <!-- Modal untuk membaca artikel -->
+  <div class="reader-overlay" id="readerOverlay" hidden>
+    <article class="reader-panel" role="dialog"
+             aria-modal="true" aria-labelledby="readerTitle">
+
+      <div class="reader-toolbar">
+        <button class="back-button" id="closeReader">
+          ← <span>Kembali</span>
+        </button>
+
+        <div class="reader-actions">
+          <button id="readerSave" class="icon-button"
+                  aria-label="Simpan artikel" title="Simpan artikel">
+            ♧
+          </button>
+
+          <button id="readerCloseIcon" class="icon-button"
+                  aria-label="Tutup artikel">
+            ×
+          </button>
+        </div>
+      </div>
+
+      <div class="reader-progress">
+        <div id="readerProgressBar"></div>
+      </div>
+
+      <div class="reader-body">
+        <div class="reader-meta">
+          <span id="readerCategory"></span>
+          <span>·</span>
+          <span id="readerTime"></span>
+        </div>
+
+        <h1 id="readerTitle"></h1>
+
+        <p class="reader-description" id="readerDescription"></p>
+
+        <div class="reader-divider"></div>
+
+        <div id="readerContent" class="reader-content"></div>
+
+        <div class="reader-end">
+          <span class="brand-icon">r.</span>
+          <p>Akhir bacaan. Awal pemikiran.</p>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+
+  <!-- Panel artikel tersimpan -->
+  <div class="saved-overlay" id="savedOverlay" hidden>
+    <section class="saved-panel" role="dialog"
+             aria-modal="true" aria-labelledby="savedTitle">
+
+      <div class="saved-header">
+        <div>
+          <span class="section-label">KOLEKSI PRIBADI</span>
+          <h2 id="savedTitle">Bacaan tersimpan</h2>
+        </div>
+
+        <button id="closeSaved" class="icon-button"
+                aria-label="Tutup koleksi">×</button>
+      </div>
+
+      <div id="savedList" class="saved-list"></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+        </html>
